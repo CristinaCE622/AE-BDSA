@@ -17,6 +17,7 @@ const Products = (props) => {
       console.error(error);
     }
   };
+  
 
   const renderStars = (rating) => {
     const stars = [];
@@ -55,7 +56,7 @@ const Products = (props) => {
   return (
     <div className="products-container">
       {products?.map((product) => (
-        <div key={product.id} className="product-card">
+        <div key={product.id || product.title} className="product-card">
           <img src={product.thumbnail} alt={product.title} />
           <h2 className="product-title">{product.title}</h2>
           <div className="rating">
